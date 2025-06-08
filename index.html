@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Survey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 32px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 20px;
+    }
+
+    select {
+      margin-top: 10px;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Online Survey</h1>
+  <h2>Rating the following Survey:</h2>
+
+  <form id="surveyForm">
+    <ul>
+      <li>
+        <label>Support Services</label><br>
+        <select name="Support Services">
+          <option value="1 - Poor">1 - Poor</option>
+          <option value="2 - Fair">2 - Fair</option>
+          <option value="3 - Good" selected>3 - Good</option>
+          <option value="4 - Very Good">4 - Very Good</option>
+          <option value="5 - Excellent">5 - Excellent</option>
+        </select>
+      </li>
+
+      <li>
+        <label>Extracurricular Activities</label><br>
+        <select name="Extracurricular Activities">
+          <option value="1 - Poor">1 - Poor</option>
+          <option value="2 - Fair">2 - Fair</option>
+          <option value="3 - Good">3 - Good</option>
+          <option value="4 - Very Good" selected>4 - Very Good</option>
+          <option value="5 - Excellent">5 - Excellent</option>
+        </select>
+      </li>
+
+      <li>
+        <label>Communication Effectiveness</label><br>
+        <select name="Communication Effectiveness">
+          <option value="1 - Poor">1 - Poor</option>
+          <option value="2 - Fair">2 - Fair</option>
+          <option value="3 - Good" selected>3 - Good</option>
+          <option value="4 - Very Good">4 - Very Good</option>
+          <option value="5 - Excellent">5 - Excellent</option>
+        </select>
+      </li>
+
+      <li>
+        <label>Overall Satisfaction</label><br>
+        <select name="Overall Satisfaction">
+          <option value="1 - Poor">1 - Poor</option>
+          <option value="2 - Fair">2 - Fair</option>
+          <option value="3 - Good">3 - Good</option>
+          <option value="4 - Very Good" selected>4 - Very Good</option>
+          <option value="5 - Excellent">5 - Excellent</option>
+        </select>
+      </li>
+
+      <li>
+        <label>Accessibility of Advisors</label><br>
+        <select name="Accessibility of Advisors">
+          <option value="1 - Poor">1 - Poor</option>
+          <option value="2 - Fair">2 - Fair</option>
+          <option value="3 - Good">3 - Good</option>
+          <option value="4 - Very Good">4 - Very Good</option>
+          <option value="5 - Excellent" selected>5 - Excellent</option>
+        </select>
+      </li>
+    </ul>
+
+    <button type="button" onclick="submitSurvey()">Submit</button>
+  </form>
+
+  <script>
+    function submitSurvey() {
+      const form = document.getElementById('surveyForm');
+      const data = new FormData(form);
+      let result = "Survey Submitted:\n\n";
+
+      for (let [key, value] of data.entries()) {
+        result += `${key}: ${value}\n`;
+      }
+
+      alert(result);
+    }
+  </script>
+
+</body>
+</html>
